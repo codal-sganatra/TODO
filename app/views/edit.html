@@ -1,0 +1,26 @@
+<div class="container">
+	<table datatable="ng" dt-options="crudList.dtOptions" dt-column-defs="crudList.dtColumnDefs" dt-instance="crudList.dtInstance" class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Email-id</th>
+				<th>User-Name</th>
+				<th>Password</th>
+				<th>City</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="crud in crudListData.results track by $index">
+				<td ng-bind="crud.name"></td>
+				<td ng-bind="crud.phone"></td>
+				<td ng-bind="crud.mail"></td>
+				<td ng-bind="crud.uname"></td>
+				<td ng-bind="crud.pass"></td>
+				<td ng-bind="crud.city"></td>
+				<td><a class="btn btn-info" ui-sref="put({objectID:'{{crud.objectId}}'})" style="margin:0;padding:0"><span class="glyphicon glyphicon-pencil"></span></a><!-- <a class="btn btn-danger" ng-click="deleteMe('{{crud.objectId}}', $index)"  style="margin:0;padding:0"><span class="glyphicon glyphicon-trash"></span></a>--></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

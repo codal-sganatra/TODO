@@ -1,0 +1,31 @@
+<div class="container">
+	<form name="form">
+		<div class="form-group">
+		    <label for="Name">Name</label>
+		    <input type="text" class="form-control" id="Name" placeholder="Name" ng-model="currentObject.name" required/>
+		</div>
+		<div class="form-group">
+		    <label for="Phone">Phone Number</label>
+		    <input type="text" class="form-control" id="Phone" placeholder="Phone Number" ng-model="currentObject.phone" requried/>
+		</div>
+		<div class="form-group">
+		    <label for="Mail">Email-Id</label>
+		    <input type="text" class="form-control" id="Phone" placeholder="Email-id" ng-model="currentObject.mail" requried/>
+		</div>
+		<div class="form-group">
+		    <label for="User Name">User Name</label>
+		    <input type="text" class="form-control" id="Phone" placeholder="User name" ng-model="currentObject.uname" requried/>
+		</div>
+		<div class="form-group">
+		    <label for="Password">Password</label>
+		    <input type="password" class="form-control" id="Phone" placeholder="Password" ng-model="currentObject.pass" requried/>
+		</div>
+		
+		<div class="form-group">
+		    <label for="City">City</label>
+		    <input type="text" class="form-control" id="City" placeholder="City" ng-model="currentObject.city" requried/>
+		</div>
+		
+		<button class="btn btn-raised btn-primary" ng-click="updateMe()">Save</button>
+	</form>
+</div>
