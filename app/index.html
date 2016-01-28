@@ -9,19 +9,17 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.min.css" />
+    <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="bower_components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-
-
-
-  <style>
-/* Hide Angular JS elements before initializing */
-.ng-cloak {
-    display: none;
-}
-</style>
-
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
   <body ng-app="todoapp">
@@ -54,6 +52,7 @@
               <li ui-sref-active="active"><a ui-sref="view">View</a></li>
               <li ui-sref-active="active"><a ui-sref="edit">Edit</a></li>
               <li ui-sref-active="active"><a ui-sref="delete">Delete</a></li>
+              <li ui-sref-active="active"><a ui-sref="upload">Upload</a></li>
 
             </ul>
           </div>
@@ -68,6 +67,55 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jQuery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-image-upload-datauri/src/imageupload.js"></script>
+    <script src="bower_components/angular-inflector/dist/angular-inflector.min.js"></script>
+    <script src="bower_components/angular-restmod/dist/angular-restmod-bundle.min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+    <script src="bower_components/angular-ellipsis/src/angular-ellipsis.js"></script>
+    <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/light-columnfilter/angular-datatables.light-columnfilter.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/buttons/angular-datatables.buttons.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/select/angular-datatables.select.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
+    <script src="bower_components/angular-base64-upload/src/angular-base64-upload.js"></script>
+    <script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+    <script src="bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-csv-import/dist/angular-csv-import.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+
+
+
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -92,12 +140,12 @@
         <script src="scripts/services/crudservice.js"></script>
         <script src="scripts/controllers/put.js"></script>
         <script src="scripts/controllers/create.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/upload.js"></script>
 
 
         <!-- endbuild -->
-    <script>
+   <!-- <script>
     $.material.init();
     </script>
-</body>
+--></body>
 </html>

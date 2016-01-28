@@ -110,8 +110,14 @@ angular
        },
        data: {pageTitle: 'delete'},
        url: '/delete'
-     });
-
+     })
+.state('upload', {
+       views : {
+         contentView : {templateUrl: 'views/upload.html', controller:'MainCtrl'}
+       },
+       data: {pageTitle: 'upload'},
+       url: '/upload'
+     })
 
   }).config(['$httpProvider', function($httpProvider) {
         $httpProvider.defaults.useXDomain = true;
